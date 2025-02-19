@@ -2,4 +2,208 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  font-family: var(--main-font);
+  position: relative;
+  background-color: var(--main-color);
+}
+
+.header {
+  display: grid;
+  background-image: var(--cover-image);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-block-end: 40px;
+}
+
+a {
+  text-decoration: none;
+  text-shadow: 1.5px 1.5px 0 var(--accent-color);
+}
+
+.header__theme-menu {
+  justify-self: end;
+  margin-inline-end: 17px;
+  margin-block-start: 70px;
+  margin-block-end: 65px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__title {
+  justify-self: start;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 1em;
+  text-shadow: 4px 4px 0 var(--accent-color);
+  color: var(--title-color);
+  margin-block-end: 55px;
+  margin-inline-start: 10px;
+  line-height: 96px;
+}
+
+.header__subtitle {
+  display: block;
+  justify-self: end;
+  font-size: inherit;
+  background-color: var(--accent-color);
+  color: var(--main-color);
+  margin-block-end: 66px;
+  margin-inline: 10px;
+  max-inline-size: 364px;
+  font-size: var(--font-size-normal);
+  line-height: var(--line-height);
+}
+
+.header__theme-menu-button {
+  font-size: inherit;
+  background-color: transparent;
+  font-weight: var(--font-weight-normal);
+  color: var(--accent-color);
+  border: none;
+  text-transform: lowercase;
+  line-height: 26px;
+}
+
+.header__extra-element-text::before {
+  content: "REC";
+  position: absolute;
+  font-size: inherit;
+  color: var(--accent-color);
+  top: 10px;
+  right: 38px;
+}
+
+.header__extra-element-figure::before {
+  content: "";
+  position: absolute;
+  background-color: var(--accent-color);
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 100%;
+  box-shadow: 0 0 3px 3px var(--accent-color);
+  top: 18px;
+  right: 19px;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--accent-color);
+  background-color: transparent;
+  top: 10px;
+  right: 10px;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--accent-color);
+  background-color: transparent;
+  bottom: 10px;
+  left: 10px;
+}
+
+.main__block {
+  display: grid;
+  margin-inline: 10px;
+  margin-block-end: 50px;
+}
+
+.main__block:last-child {
+  margin-block-end: 40px;
+}
+
+.main__block-title {
+  color: var(--accent-color);
+  font-size: var(--font-size-normal);
+  margin-block-end: 20px;
+  line-height: var(--line-height);
+}
+
+.main__block-subtitle, .main__block-advices-title, .main__block-advices-subtitle {
+  background-color: var(--accent-color);
+  color: var(--main-color);
+  font-size: var(--font-size-normal);
+  margin-block-end: 10px;
+  line-height: var(--line-height);
+}
+
+.main__block-description {
+  color: var(--main-text-color);
+  font-size: var(--font-size-normal);
+  line-height: var(--line-height);
+}
+
+.main__block-description:not(:last-child) {
+  margin-block-end: 20px;
+}
+
+.main__block-advices-title {
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height);
+}
+
+.main__block-advices-subtitle {
+  margin-block-end: 20px;
+  line-height: var(--line-height);
+}
+
+.main__block-pictures {
+  display: grid;
+  gap: 10px;
+}
+
+img {
+  inline-size: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.footer__title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 2px 2px 0 var(--accent-color);
+  color: var(--title-color);
+  margin-block: 286px;
+  margin-inline-start: 10px;
+  line-height: 96px;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--accent-color);
+  background-color: transparent;
+  top: 10px;
+  right: 10px;
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--accent-color);
+  background-color: transparent;
+  bottom: 10px;
+  left: 10px;
 }
