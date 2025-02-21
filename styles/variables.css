@@ -1,11 +1,7 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
-
 :root {
   --main-text-color: #F1B2CE;
   --accent-color: #FF0070;
+  --accent-title-color: #FF0070;
   --title-color: #DB00FF;
   --main-color: #000028;
   --main-font: IBM Plex mono, sans-serif;
@@ -20,4 +16,16 @@
   --header-extra-element-position-right: 38px;
   --header-extra-element-figure-position-top: 18px;
   --header-extra-element-figure-position-right: 19px;
+  --padding-standard: 10px;
+  --padding-standard-x2: 20px;
+}
+
+@media (width >= 768px) {
+  :root {
+    --angle-decoration-position: 20px;
+    --header-extra-element-position-top: 22px;
+    --header-extra-element-position-right: 48px;
+    --header-extra-element-figure-position-top: 28px;
+    --header-extra-element-figure-position-right: 29px;
+  }
 }

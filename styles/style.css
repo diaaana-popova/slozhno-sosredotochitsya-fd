@@ -1,7 +1,4 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   font-family: var(--main-font);
   position: relative;
   background-image: var(--cover-image);
@@ -14,18 +11,25 @@
 
 a {
   text-decoration: none;
-  text-shadow: 1.5px 1.5px 0 var(--accent-color);
+  text-shadow: 1.5px 1.5px 0 var(--accent-title-color);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 1px solid var(--main-text-color);
 }
 
 .header {
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   position: relative;
-  padding: 10px;
+  padding: var(--padding-standard);
   block-size: min(100dvh, 668px);
   margin-block-end: 40px;
 }
-
 
 .header__theme-menu {
   display: block;
@@ -41,20 +45,32 @@ a {
   font-size: var(--font-size-normal);
 }
 
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid rgba(255, 0, 112, 0.4);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color);
+}
+
 .header__title {
   justify-self: start;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 var(--accent-title-color);
   color: var(--title-color);
   line-height: 96px;
   grid-row: 2;
 }
 
 .header__subtitle {
-  display: block;
   justify-self: end;
   align-self: center;
-  background-color: var(--accent-color);
+  background-color: var(--accent-title-color);
   color: var(--main-color);
   font-size: var(--font-size-normal);
   line-height: var(--line-height);
@@ -121,7 +137,7 @@ a {
 
 .main__block {
   display: grid;
-  padding-inline: 10px;
+  padding-inline: var(--padding-standard);
   margin-block-end: 50px;
 }
 
@@ -137,10 +153,10 @@ a {
 }
 
 .main__block-subtitle, .main__block-advices-title, .main__block-advices-subtitle {
-  background-color: var(--accent-color);
+  background-color: var(--accent-title-color);
   color: var(--main-color);
   font-size: var(--font-size-normal);
-  margin-block-end: 10px;
+  margin-block-end: var(--padding-standard);
   line-height: var(--line-height);
 }
 
@@ -151,7 +167,11 @@ a {
 }
 
 .main__block-description:not(:last-child) {
-  margin-block-end: 20px;
+  margin-block-end: var(--padding-standard-x2);
+}
+
+.main__block-card:not(:last-child) {
+  padding-block-end: var(--padding-standard-x2);
 }
 
 .main__block-advices-title {
@@ -160,13 +180,13 @@ a {
 }
 
 .main__block-advices-subtitle {
-  margin-block-end: 20px;
+  margin-block-end: var(--padding-standard-x2);
   line-height: var(--line-height);
 }
 
 .main__block-pictures {
   display: grid;
-  gap: 10px;
+  gap: var(--padding-standard);
 }
 
 img {
@@ -183,24 +203,15 @@ img {
 
 .footer__title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--accent-title-color);
   color: var(--title-color);
 }
 
 
 @media (width >= 768px) {
-  :root {
-    --angle-decoration-position: 20px;
-    --header-extra-element-position-top: 22px;
-    --header-extra-element-position-right: 48px;
-    --header-extra-element-figure-position-top: 28px;
-    --header-extra-element-figure-position-right: 29px;
-  }
-
   .header {
     padding: 20px 20px 20px 0;
-    /* block-size: min(100vh, 1024px); */
-    block-size: 1024px;
+    block-size: min(100vh, 1024px);
     margin-block-end: 60px;
   }
 
@@ -213,26 +224,26 @@ img {
   }
 
   .main__block {
-    padding-inline: 20px;
+    padding-inline: var(--padding-standard-x2);
     margin-block-end: 80px;
   }
 
   .main__block-title {
-    margin-block-end: 20px;
+    margin-block-end: var(--padding-standard-x2);
   }
 
   .main__block-subtitle {
-    margin-block-end: 10px;
+    margin-block-end: var(--padding-standard);
   }
 
   .main__block-pictures-subtitle {
-    margin-block-end: 20px;
+    margin-block-end: var(--padding-standard-x2);
   }
 
   .main__block-why {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    column-gap: 20px;
+    column-gap: var(--padding-standard-x2);
   }
 
   .main__block-title-why {
@@ -245,13 +256,13 @@ img {
   }
 
   .main__block-title-what {
-    inline-size: 236px;
+    inline-size: calc((100% - 40px) / 3);
   }
 
   .main__block-advices {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    column-gap: 20px;
+    column-gap: var(--padding-standard-x2);
   }
 
   .main__block-title-advices {
@@ -266,7 +277,7 @@ img {
   .main__block-pictures {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; 
-    gap: 20px;
+    gap: var(--padding-standard-x2);
     grid-auto-flow: dense;
     inline-size: max(728px, 100%);
     block-size: max(780px, 100%);
@@ -308,8 +319,7 @@ img {
   }
 
   .footer {
-    /* block-size: min(100vh, 1024px); */
-    block-size: 1024px;
+    block-size: min(100vh, 1024px);
   }
   
   .footer__title {
@@ -319,8 +329,7 @@ img {
 
 @media (width >= 1024px) {
   .header {
-    /* block-size: min(100vh, 768px); */
-    block-size: 768px;
+    block-size: min(100vh, 768px);
   }
 
   .header__theme-menu {
@@ -332,7 +341,7 @@ img {
   .header__theme-menu-list {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: var(--padding-standard);
   }
 
   .header__subtitle {
@@ -346,7 +355,7 @@ img {
   .main__block-what {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 20px;
+    column-gap: var(--padding-standard-x2);
   }
 
   .main__block-title-what {
@@ -356,7 +365,6 @@ img {
   }
 
   .footer {
-    /* block-size: min(100vh, 768px); */
-    block-size: 768px;
+    block-size: min(100vh, 768px);
   }
 }
