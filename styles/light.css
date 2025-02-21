@@ -4,6 +4,7 @@
   --accent-title-color: #FF8DCB;
   --title-color: #FFC2E6;
   --main-color: #353430;
+  --cover-color: #FFC2E6;
   --cover-image: url(../images/cover-image-light.png);
 }
 
@@ -14,6 +15,7 @@
     --accent-title-color: #FF8DCB;
     --title-color: #FFC2E6;
     --main-color: #353430;
+    --cover-color: #FFC2E6;
     --cover-image: url(../images/cover-image-light.png);
   }
 }
