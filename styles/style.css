@@ -276,7 +276,7 @@ img {
 
   .main__block-pictures {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr 1fr;
     gap: var(--padding-standard-x2);
     grid-auto-flow: dense;
     inline-size: max(728px, 100%);
@@ -366,5 +366,23 @@ img {
 
   .footer {
     block-size: min(100vh, 768px);
+  }
+}
+
+.theme-light .header__extra-element-text::before, .theme-light .header__extra-element-figure::before {
+  display: none;
+}
+
+.theme-light .header__theme-menu-button:hover {
+  outline: 1px solid rgba(53, 52, 48, 0.4);
+}
+
+@media (prefers-color-scheme: light) {
+  .header__extra-element-text::before, .header__extra-element-figure::before {
+    display: none;
+  }
+  
+  .theme-light .header__theme-menu-button:hover {
+    outline: 1px solid rgba(53, 52, 48, 0.4);
   }
 }
