@@ -37,7 +37,7 @@ a {
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 11px;
   font-size: var(--font-size-normal);
 }
 
@@ -59,7 +59,7 @@ a {
   font-size: var(--font-size-normal);
   line-height: var(--line-height);
   grid-row: 3;
-  max-inline-size: 364px;
+  inline-size: min(100%, 364px);
 }
 
 .header__theme-menu-button {
@@ -67,9 +67,10 @@ a {
   background-color: transparent;
   font-weight: var(--font-weight-normal);
   color: var(--accent-color);
-  border: none;
   text-transform: lowercase;
-  line-height: 26px;
+  border: 1px solid transparent;
+  padding: 2px 13px 4px;
+  line-height: 18px;
 }
 
 .header__extra-element-text::before {
@@ -207,6 +208,10 @@ img {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
+  .header__subtitle {
+    inline-size: calc(50% - 10px);
+  }
+
   .main__block {
     padding-inline: 20px;
     margin-block-end: 80px;
@@ -240,7 +245,7 @@ img {
   }
 
   .main__block-title-what {
-    max-inline-size: 236px;
+    inline-size: 236px;
   }
 
   .main__block-advices {
@@ -264,7 +269,7 @@ img {
     gap: 20px;
     grid-auto-flow: dense;
     inline-size: max(728px, 100%);
-    block-size: max(780px, 1048px);
+    block-size: max(780px, 100%);
   }
 
   img {
@@ -303,8 +308,8 @@ img {
   }
 
   .footer {
-      /* block-size: min(100vh, 1024px); */
-      block-size: 1024px;
+    /* block-size: min(100vh, 1024px); */
+    block-size: 1024px;
   }
   
   .footer__title {
@@ -312,6 +317,46 @@ img {
   }
 }
 
-@media (inline-size >= 1024px) {
+@media (width >= 1024px) {
+  .header {
+    /* block-size: min(100vh, 768px); */
+    block-size: 768px;
+  }
 
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    padding-inline-start: 12px;
+  }
+  
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .header__subtitle {
+    margin-block-start: 18px;
+  }
+
+  .main__block-why, .main__block-advices {
+    column-gap: 12px;
+  }
+
+  .main__block-what {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+  }
+
+  .main__block-title-what {
+    grid-row: 1;
+    grid-column: 1 / 4;
+    inline-size: 315px;
+  }
+
+  .footer {
+    /* block-size: min(100vh, 768px); */
+    block-size: 768px;
+  }
 }
