@@ -5,7 +5,7 @@
   --title-color: #DB00FF;
   --main-color: #000028;
   --cover-color: #000028;
-  --main-font: IBM Plex mono, sans-serif;
+  --main-font: IBM Plex mono, monospace;
   --cover-image: url(../images/cover-image-dark.png);
   --font-weight-normal: 400;
   --font-weight-bold: 700;

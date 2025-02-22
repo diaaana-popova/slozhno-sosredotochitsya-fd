@@ -8,6 +8,14 @@
   --cover-image: url(../images/cover-image-light.png);
 }
 
+.theme-light .header__extra-element::before, .theme-light .header__extra-element::after {
+  display: none;
+}
+
+.theme-light .header__theme-menu-button:hover {
+  outline: 1px solid rgba(53, 52, 48, 0.4);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --main-text-color: #353430;
@@ -18,4 +26,13 @@
     --cover-color: #FFF1F7;
     --cover-image: url(../images/cover-image-light.png);
   }
+
+  .theme-light .header__extra-element::before, .theme-light .header__extra-element::after, .theme-auto .header__extra-element::before, .theme-auto .header__extra-element::after {
+    display: none;
+  }
+
+  .theme-light .header__theme-menu-button:hover, .theme-auto .header__theme-menu-button:hover {
+    outline: 1px solid rgba(53, 52, 48, 0.4);
+  }
 }
+
